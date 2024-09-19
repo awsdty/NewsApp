@@ -42,7 +42,7 @@ fun MainWindow(viewModel: News) {
                 viewModel.changeNewsOne()
             }
         }
-        Box(modifier = Modifier.fillMaxSize()) {
+        Box(modifier = Modifier.fillMaxSize().background(Color(0xFFB3E5FC))) {
             // Здесь можно разместить другие элементы интерфейса
             Column( modifier = Modifier.fillMaxSize())
             {
@@ -53,12 +53,12 @@ fun MainWindow(viewModel: News) {
                             Column(modifier = Modifier
                                 .width(180.dp)
                                 .clip(RoundedCornerShape(16.dp))
-
+                                .background(color = Color.White)
                                 .padding(all = 5.dp)){
 
                                 Text(text = viewModel.newsString1, modifier = Modifier.height(240.dp))
                                 Row(modifier = Modifier.height(30.dp)) {
-                                    Text(text = "лайки : ")
+                                    Text(text = "лайки ❤\uFE0F : ")
                                     Text(text = viewModel.likes1.toString())
                                 }
                             }
@@ -76,7 +76,7 @@ fun MainWindow(viewModel: News) {
 
                                 Text(text = viewModel.newsString2, modifier = Modifier.height(240.dp))
                                 Row(modifier = Modifier.height(30.dp)) {
-                                    Text(text = "лайки : ")
+                                    Text(text = "лайки ❤\uFE0F : ")
                                     Text(text = viewModel.likes2.toString())
                                 }
                             }
@@ -95,7 +95,7 @@ fun MainWindow(viewModel: News) {
 
                                 Text(text = viewModel.newsString3, modifier = Modifier.height(240.dp))
                                 Row(modifier = Modifier.height(30.dp)) {
-                                    Text(text = "лайки : ")
+                                    Text(text = "лайки ❤\uFE0F : ")
                                     Text(text = viewModel.likes3.toString())
                                 }
                             }
@@ -113,7 +113,7 @@ fun MainWindow(viewModel: News) {
 
                                 Text(text = viewModel.newsString4, modifier = Modifier.height(240.dp))
                                 Row(modifier = Modifier.height(30.dp)) {
-                                    Text(text = "лайки : ")
+                                    Text(text = "лайки ❤\uFE0F : ")
                                     Text(text = viewModel.likes4.toString())
                                 }
                             }
