@@ -42,6 +42,88 @@ fun MainWindow(viewModel: News) {
                 viewModel.changeNewsOne()
             }
         }
-        
+        Box(modifier = Modifier.fillMaxSize()) {
+            // Здесь можно разместить другие элементы интерфейса
+            Column( modifier = Modifier.fillMaxSize())
+            {
+                Row{
+                    Box(modifier = Modifier.padding(all = 5.dp).clickable { viewModel.click1() }){
+
+                        Box(){
+                            Column(modifier = Modifier
+                                .width(180.dp)
+                                .clip(RoundedCornerShape(16.dp))
+
+                                .padding(all = 5.dp)){
+
+                                Text(text = viewModel.newsString1, modifier = Modifier.height(240.dp))
+                                Row(modifier = Modifier.height(30.dp)) {
+                                    Text(text = "лайки : ")
+                                    Text(text = viewModel.likes1.toString())
+                                }
+                            }
+                        }
+                    }
+
+                    Box(modifier = Modifier.padding(all = 5.dp).clickable { viewModel.click2() }){
+
+                        Box(){
+                            Column(modifier = Modifier
+                                .width(180.dp)
+                                .clip(RoundedCornerShape(16.dp))
+                                .background(color = Color.White)
+                                .padding(all = 5.dp)){
+
+                                Text(text = viewModel.newsString2, modifier = Modifier.height(240.dp))
+                                Row(modifier = Modifier.height(30.dp)) {
+                                    Text(text = "лайки : ")
+                                    Text(text = viewModel.likes2.toString())
+                                }
+                            }
+                        }
+                    }
+                }
+                Row{
+                    Box(modifier = Modifier.padding(all = 5.dp).clickable { viewModel.click3() }){
+
+                        Box(){
+                            Column(modifier = Modifier
+                                .width(180.dp)
+                                .clip(RoundedCornerShape(16.dp))
+                                .background(color = Color.White)
+                                .padding(all = 5.dp)){
+
+                                Text(text = viewModel.newsString3, modifier = Modifier.height(240.dp))
+                                Row(modifier = Modifier.height(30.dp)) {
+                                    Text(text = "лайки : ")
+                                    Text(text = viewModel.likes3.toString())
+                                }
+                            }
+                        }
+                    }
+
+                    Box(modifier = Modifier.padding(all = 5.dp).clickable { viewModel.click4() }){
+
+                        Box(){
+                            Column(modifier = Modifier
+                                .width(180.dp)
+                                .clip(RoundedCornerShape(16.dp)) // Устанавливаем радиус закругления
+                                .background(color = Color.White)
+                                .padding(all = 5.dp)){
+
+                                Text(text = viewModel.newsString4, modifier = Modifier.height(240.dp))
+                                Row(modifier = Modifier.height(30.dp)) {
+                                    Text(text = "лайки : ")
+                                    Text(text = viewModel.likes4.toString())
+                                }
+                            }
+                        }
+                    }
+                }
+
+
+            }
+        }
+
     }
 }
