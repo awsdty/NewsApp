@@ -39,6 +39,62 @@ class News : ViewModel() {
         "Социальные сети становятся важным инструментом для активизма."
     )
 
+    fun startNews(){
+        likesArray = Array(newsArray.size) {0}
+
+
+    }
+
+    fun changeNews(){
+        likesArray?.set(id1, _likes1.value ?: 0)
+        likesArray?.set(id2, _likes2.value ?: 0)
+        likesArray?.set(id3, _likes3.value ?: 0)
+        likesArray?.set(id4, _likes4.value ?: 0)
+        id1 = generateRandomNumber(newsArray.size, id1, id2, id3, id4)
+        id2 = generateRandomNumber(newsArray.size, id1, id2, id3, id4)
+        id3 = generateRandomNumber(newsArray.size, id1, id2, id3, id4)
+        id4 = generateRandomNumber(newsArray.size, id1, id2, id3, id4)
+        _likes1.value = likesArray?.get(id1) ?: 0
+        _likes2.value = likesArray?.get(id2) ?: 0
+        _likes3.value = likesArray?.get(id3) ?: 0
+        _likes4.value = likesArray?.get(id4) ?: 0
+        newsString1 = newsArray[id1]
+        newsString2 = newsArray[id2]
+        newsString3 = newsArray[id3]
+        newsString4 = newsArray[id4]
+    }
+
+
+    fun changeNewsOne() {
+        // Выбираем случайный айди
+        val randomPost = generateRandomNumber(4, 5, 5, 5, 5)
+        val randomId = generateRandomNumber(newsArray.size, id1, id2, id3, id4)
+        println(randomId)
+        // Обновляем данные только для этого айди
+        when (randomPost) {
+            0 -> {
+                likesArray?.set(id1, _likes1.value ?: 0)
+                _likes1.value = likesArray?.get(randomId) ?: 0
+                newsString1 = newsArray[randomId]
+            }
+            1 -> {
+                likesArray?.set(id2, _likes2.value ?: 0)
+                _likes2.value = likesArray?.get(randomId) ?: 0
+                newsString2 = newsArray[randomId]
+            }
+            2 -> {
+                likesArray?.set(id3, _likes3.value ?: 0)
+                _likes3.value = likesArray?.get(randomId) ?: 0
+                newsString3 = newsArray[randomId]
+            }
+            3 -> {
+                likesArray?.set(id4, _likes4.value ?: 0)
+                _likes4.value = likesArray?.get(randomId) ?: 0
+                newsString4 = newsArray[randomId]
+            }
+        }
+    }
+
     
 
 
