@@ -95,7 +95,30 @@ class News : ViewModel() {
         }
     }
 
-    
+    fun generateRandomNumber(N: Int, a: Int, b: Int, c: Int, d: Int): Int {
+        val excludedNumbers = setOf(a, b, c, d)
+        var randomNumber: Int
+
+        do {
+            randomNumber = Random.nextInt(N)
+        } while (randomNumber in excludedNumbers)
+
+        return randomNumber
+    }
+
+    fun click1() {
+
+        _likes1.value = (_likes1.value ?: 0) + 1
+    }
+    fun click2(){
+        _likes2.value = (_likes2.value ?: 0) + 1
+    }
+    fun click3(){
+        _likes3.value = (_likes3.value ?: 0) + 1
+    }
+    fun click4(){
+        _likes4.value = (_likes4.value ?: 0) + 1
+    }
 
 
 }
